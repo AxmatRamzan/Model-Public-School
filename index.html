@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Model Public School
+    </title>
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <!-- CSS Styles -->
+    <style>
+        /* Reset default styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+        p {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        /* Navigation styles */
+        nav {
+            background-color: #666;
+            padding: 10px;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        li {
+            margin-right: 20px;
+        }
+
+         /* Content styles */
+         .content {
+            padding: 20px;
+        }
+
+         /* Link styles */
+         a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #ff9900;
+        } 
+
+         /* Button styles */
+         .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #ff9900;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #e68a00;
+        }
+
+         /* Logo styles */
+         #logo {
+            height:170px;
+        }
+        .logo-container {
+            margin-right: auto;
+        }
+
+        /* Header title styles */
+        .header-title {
+            text-align: center;
+        }
+
+        /* Social-Media icon styles */
+        .social-icon {
+            margin-top: 20px;
+        }
+
+        .social-icon a {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .social-icon img {
+             width: 30px;
+            height: 30px;
+            transition: transform 0.3s ease;
+        } 
+
+        .social-icon img:hover {
+            transform: scale(1.2);
+        }
+
+        .social-icon {
+            display: inline-block;
+            margin-right: 10px;
+        }  
+
+        /* Horizontal rule styles */
+        hr {
+            margin: 0 auto;
+            border-style: none;
+            border-top-style: dotted;
+            border-color: gray;
+            border-width: 6px;
+            width: 9%
+        } 
+
+         /* Footer styles */
+         footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* Image styles */
+        img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        height: 288px;
+        }
+
+        /* Font theme */
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
+
+        p {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
+
+        /* Notice board styles */
+        .notice-board {
+            max-width: 900px;
+            margin: 50px auto;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .notice {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .notice:last-child {
+            border-bottom: none;
+        }
+
+        .notice h2 {
+            font-size: 24px;
+            color: #333;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+        .notice a {
+            font-size: 16px;
+            color: #666;
+            margin: 0;
+        }
+
+        /*Messages Section Styles*/
+        .message-section {
+            max-width: 1000px;
+            margin: 0 auto;
+             display: flex;
+            flex-wrap: wrap;
+             justify-content: space-between;
+        }
+
+        .message {
+            flex-basis: calc(33.33% - 20px);
+            background-color: #f4f4f4;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .message:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .message img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+        }
+
+        .message h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .message p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Responsive styles for devices upto width of 768px */
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            nav {
+                padding: 5px;
+            }
+
+            ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            li {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .button {
+                margin-top: 10px;
+            }
+
+            .content {
+                padding: 10px;
+            }
+
+            .footer-title {
+                text-align: center;
+            }
+
+            .social-icon {
+                margin-top: 10px;
+            }   
+
+            .social-icon img {
+                width: 25px;
+                height: 25px;
+            }
+
+            .social-icon a {
+                display: inline-block;
+                margin-right: 5px;
+            }
+
+            .logo-container {
+                margin-right: 0;
+                text-align: center;
+            }
+
+            .logo {
+                max-width: 80px;
+            }
+
+            hr {
+                width: 20%;
+            }
+
+            .message {
+                flex-basis: 100%;
+                margin-right: 0;
+            }
+    }
+
+    /* Responsive styles for devices upto width of 480px */
+        @media screen and (max-width: 480px) {
+             h1 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            .button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            .social-icon img {
+                width: 20px;
+                height: 20px;
+            }
+
+            .message {
+                flex-basis: 100%;
+                margin-bottom: 20px;
+            }
+    }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="loader"></div>
+
+
+    <!--Heading-->
+    <header>
+        <div class="logo-container">
+          <img src="images/school-img.png" alt="School-Logo" id="logo">
+        </div>
+        <h1>Model Public School Sopore</h1>
+        <p>
+            Islamic Educational Society
+        </p>
+      </header>
+
+    <!--Navigation Bar-->  
+    <nav>
+        <ul>
+            <li>
+                <a href="#home">Home</a>
+            </li>
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#grade-levels">Grade Levels</a>
+            </li>
+            <li>
+                <a href="#events-and-activities">Events and Activities</a>
+            </li>
+            <li>
+                <a href="#admissions">Admissions</a>
+            </li>
+            <li>
+                <a href="#contact-us">Contact Us</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!--Home-->
+    <div id="home" class="content">
+        <h1>
+            Welcome to Model Public School-Where Education Meets Excellence!
+        </h1>
+        <p>
+            At Model Public School, we believe in creating a vibrant and inspiring learning environment. Our dedicated team of educators is committed to providing a well-rounded education that nurtures the mind, body, and soul. With a focus on academic excellence and Islamic values, we empower students to reach their full potential and become future leaders.
+            <br>
+            Discover a world of endless opportunities at Model Public School. Join us on this exciting journey of discovery, growth, and success. Together, let's create a brighter future for your child.
+        </p>
+        <a href="#admissions" class="button">Apply Now</a>
+
+    </div>
+    <hr>
+
+    <!--About Us-->
+    <div id="about" class="content">
+        <h1>
+            About Us
+        </h1>
+        <p>
+            Model Public School, located in the enchanting town of Sopore in the picturesque Kashmir Valley, is a renowned educational institution committed to providing exceptional education and holistic development to its students. With a legacy spanning over years, Model Public School has established itself as a leading name in the field of education, nurturing young minds and empowering them with the knowledge, skills, and values essential for success in the 21st century.
+            <br>
+            At Model Public School, we believe that education is the key to unlocking the full potential of every individual. We strive to create a dynamic learning environment where students are inspired to explore, inquire, and develop a lifelong love for learning. Our dedicated and highly qualified faculty members are passionate about their vocation, ensuring that every student receives personalized attention and guidance on their educational journey.
+            <br>
+            We take pride in our comprehensive curriculum that encompasses a wide range of subjects, including languages, sciences, mathematics, social sciences, arts, and physical education. The curriculum is designed to foster critical thinking, creativity, and problem-solving skills, equipping our students with the tools they need to thrive in a rapidly evolving world. We encourage students to actively participate in their own learning, promoting a student-centered approach that nurtures independent thinking, innovation, and a sense of responsibility.
+            <br>
+            Model Public School is equipped with state-of-the-art facilities and resources that facilitate effective learning and holistic development. Our classrooms are vibrant spaces that foster engagement and collaboration, equipped with modern teaching aids and technology to enhance the learning experience. We have well-equipped science and computer laboratories where students can engage in hands-on experiments and explore the wonders of technology. Our library is a treasure trove of knowledge, offering an extensive collection of books, periodicals, and digital resources to cater to the intellectual curiosity of our students.
+            <br>
+            Recognizing the importance of a well-rounded education, we encourage students to participate in a wide range of co-curricular activities. Our school offers various sports, arts, cultural events, and clubs that provide opportunities for students to discover their passions, develop leadership skills, and nurture their talents. Through these activities, students learn valuable life skills such as teamwork, communication, and resilience, preparing them for success beyond the classroom.
+            <br>
+            Model Public School is not just focused on academic excellence; we are committed to nurturing individuals with strong character and moral values. Our school places great emphasis on fostering qualities such as integrity, empathy, respect, and social responsibility. We believe in instilling a sense of ethics and encouraging students to become compassionate global citizens who contribute positively to society.
+            <br>
+            We understand the significance of strong partnerships with parents and the wider community in the educational journey of our students. We actively promote open communication and collaboration between teachers, parents, and students to ensure that the individual needs of each student are met. We believe that by working together, we can provide a supportive and enriching environment that fosters the growth and success of every child.
+            <br>
+            At Model Public School, our mission is to empower our students with the knowledge, skills, and values necessary to navigate a complex and ever-changing world. We are dedicated to providing a nurturing and inclusive educational experience that inspires a lifelong love for learning, cultivates critical thinking, and nurtures the holistic development of our students. We invite you to join us on this educational journey, where we strive for excellence and create a strong foundation for the future leaders of tomorrow.
+            <br>
+        </p>
+
+    </div>
+    <hr>
+    <br>
+        <!--Messages Section-->
+    <h1>
+        Words from the Leaders
+    </h1>
+    <br>
+    <section class="message-section">
+        <div class="message message-chairman">
+          <img src="chairman.jpg" alt="Chairman">
+          <h2>
+            Message from the Chairman
+        </h2>
+          <p>
+            Congratulations! Summer vacation has been extended.
+        </p>
+        </div>
+        <div class="message message-principal">
+          <img src="principal.jpg" alt="Principal">
+          <h2>
+            Message from the Principal
+        </h2>
+          <p>
+            Congratulations! Summer vacation has been extended.
+        </p>
+        </div>
+        <div class="message message-secretary">
+          <img src="generalsecretary.jpg" alt="General Secretary">
+          <h2>
+            Message from the General Secretary
+        </h2>
+          <p>
+            Congratulations! Summer vacation has been extended.
+          </p>
+        </div>
+      </section>
+
+    <!--Grade Levels-->
+    <div id="grade-levels" class="content">
+        <h1>
+            Grade Levels
+        </h1>
+        <table cellspacing="20" align="center">
+            <tbody>
+                <td>
+                    <img class="images" src="images/Grades Nursery to 5.png" alt="students-image">
+                </td>
+                <td>
+                    <h1>
+                        Grades Nursery to 5th
+                    </h1>
+                    <h3>
+                        Building the Foundation for Lifelong Learning
+                    </h3>
+                    <p>
+                        At Model Public School, we believe in nurturing young minds and building a strong educational foundation from the earliest years. Our Nursery to 5th-grade program provides a supportive and engaging environment where children embark on their exciting educational journey.
+                        <br>
+                        We understand that each child develops at their own pace. Our experienced educators provide individualized attention, ensuring that students reach important developmental milestones while experiencing a supportive and inclusive learning environment.
+                        <br>
+                        We employ an inquiry-based learning approach, encouraging curiosity and exploration. Our dedicated faculty fosters a positive classroom atmosphere that promotes creativity, problem-solving, and teamwork
+                    </p>
+            </tbody>
+            <tbody>
+                <td>
+                    <h1>
+                        Grades 6th to 8th
+                    </h1>
+                    <h3>
+                        Fostering Growth and Independence
+                    </h3>
+                    <p>
+                        At Model Public School, our middle school program is designed to provide a seamless transition from elementary to secondary education. We understand the unique needs of students in grades 6 to 8 and are committed to their intellectual, emotional, and social growth.
+                        <br>
+                        We believe in the holistic development of our students. Our middle school offers a wide array of co-curricular activities, including sports teams, clubs, arts programs, and community service initiatives. These activities provide students with opportunities to explore their passions, build leadership skills, and develop lifelong friendships.
+                        <br>
+                        We understand that each student has unique learning needs. Our dedicated faculty provides academic support, including tutoring programs, study groups, and enrichment opportunities, to ensure that every student reaches their full potential.
+                    </p>
+                </td>
+                <td>
+                    <img class="images" src="images/Grades 6 to 8.png" alt="students-image">
+                </td>
+                    
+            </tbody>
+            <tbody>
+                <td>
+                    <img class="images" src="images/Grades 9 to 10.png" alt="students-image">
+                </td>
+                <td>
+                    <h1>
+                        Grades 9th to 10th
+                    </h1>
+                    <h3>
+                        Preparing for College and Career Success
+                    </h3>
+                    <p>
+                        At Model Public School, our high school program for grades 9 to 10 is dedicated to empowering students and equipping them with the skills and knowledge necessary for future academic pursuits and career pathways. We provide a rigorous and supportive learning environment that nurtures personal growth and fosters a commitment to excellence.
+                        <br>
+                        We are committed to preparing our students for their post-secondary journeys. Our high school program provides college preparation resources, career guidance, and opportunities for students to explore their interests and aptitudes. We aim to foster a sense of ambition and cultivate the skills necessary for success beyond graduation.
+                        <br>
+                        We believe in the importance of a well-rounded education. In addition to our rigorous academics, we offer a wide range of extracurricular activities, including clubs, sports teams, performing arts, and community service programs. These opportunities allow students to develop their passions, leadership skills, and sense of community.
+                    </p>
+            </tbody>
+        </table>
+
+    </div>
+    <hr>
+
+    <!--Events and Activities-->
+    <div id="events-and-activities" class="content">
+        <h1>
+            Events and Activities
+        </h1>
+        
+    <table cellspacing="12">
+        <tbody>
+            <td>
+                <img class="images" src="images/sports.png" alt="sports-image">
+            </td>
+            <td>
+                <img class="images" src="images/Grades 6 to 8.png" alt="painting-competition-image">
+            </td>
+            <td>
+                <img class="images" src="images/ptm.png" alt="ptm-image">
+            </td>
+
+        <tbody>
+            <td>
+                <h3>
+                    Sports
+                </h3>
+            <p>
+                Model Public School places great emphasis on sports and recognizes its significance in the overall development of students. The school provides a wide range of sporting activities and encourages active participation from its students. From cricket to football, basketball to athletics, the school offers diverse opportunities for students to engage in sports and showcase their talents. The dedicated sports faculty and coaches at Model Public School ensure proper training and guidance, instilling values such as teamwork, discipline, and sportsmanship in the students.
+            </p>
+            </td>
+            <td>
+                <h3>
+                    Painting Competition
+                </h3>
+                <p>
+                    Model Public School organizes captivating painting competitions that showcase the artistic talents of its students. These events provide a platform for budding artists to express their creativity and imagination through vibrant strokes of a brush. The participants' artworks encompass a diverse range of themes, including nature's beauty, social issues, and abstract expressions. Through these painting competitions, Model Public School fosters a culture of artistic appreciation and self-expression among its students.
+                </p>
+            </td>
+            <td>
+                <h3>
+                    Parent-Teacher Meeting
+                </h3>
+                <p>
+                    Model Public School conducts regular parent-teacher meetings to foster effective communication and collaboration between parents and educators. These meetings serve as a valuable platform for parents to stay informed about their child's academic progress, strengths, and areas for improvement. Teachers provide comprehensive updates on students performance, highlighting their achievements and discussing strategies to support their growth. Additionally, parents have the opportunity to share their concerns, ask questions, and gain insights into their child's overall development.
+                </p>
+            </td>
+        </tbody>    
+        </tbody>
+    </table>
+    </div>
+    <hr>
+    <br>
+    <!--Notice Board-->
+    <h1>
+        Notice Board
+    </h1>
+    <div class="notice-board">
+        <div class="notice">
+            <h2 align="center">Notice 1</h2>
+            <br>
+            <marquee direction="left" scrollamount="6">
+                <a href="vacation" class="notice-link">Summer vacation has been extended. Enjoy your time off!</a>
+                </marquee>
+        </div>
+        <div class="notice">
+            <h2 align="center">Notice 2</h2>
+            <br>
+            <marquee direction="left" scrollamount="6">
+                <a href="vacation" class="notice-link">The results of the 10th grade are now available. Check your performance.</a>
+                </marquee>
+        </div>
+        <div class="notice">
+            <h2 align="center">Notice 3</h2>
+            <br>
+            <marquee direction="left" scrollamount="6">
+                <a href="vacation" class="notice-link">Our school secured the 3rd position in the math quiz competition. Congratulations to all participants!</a>
+                </marquee>
+        </div>
+        </div>
+        <hr>
+    
+    <!--Admissions-->
+    <div id="admissions" class="content">
+        <h1>
+            Admissions
+        </h1>
+        <p>
+            At Model Public School, we are dedicated to providing a nurturing and inspiring educational experience for students. Our goal is to empower young minds, foster a love for learning, and cultivate the skills necessary for success in the modern world. With a team of passionate educators, state-of-the-art facilities, and a comprehensive curriculum, we strive to create an environment that encourages academic excellence, character development, and personal growth. At Model Public School, we believe in embracing diversity, promoting critical thinking, and nurturing a sense of community among our students. We offer a wide range of extracurricular activities, clubs, and events to complement the academic journey, allowing students to explore their passions and develop well-rounded skills. Our commitment to holistic education ensures that every child receives the support and guidance they need to thrive academically, socially, and emotionally. Join us at Model Public School and embark on a transformative educational journey that will lay the foundation for a bright and successful future. Discover the opportunities that await your child and be part of a vibrant learning community that values excellence, integrity, and lifelong learning. Together, let's shape a better tomorrow at Model Public School.
+        </p>
+        <a href="#contact us" class="button">Contact Us</a>
+
+    </div>
+    <hr>
+
+    <!--Contact Us-->
+    <div id="contact-us" class="content">
+        <h1>
+            Contact Us
+        </h1>
+        <p>
+            We value your feedback and are always here to assist you. If you have any questions, comments, or inquiries, please don't hesitate to get in touch with us. Our dedicated team is ready to provide you with the information and support you need. You can reach us through the following channels:
+        </p>    
+            <br><br>
+
+            Address: Model Public School, Model Town A Rd, Model Town, Sopore, Jammu and Kashmir 193201
+            <br>
+            Contact No.: 01954-295446
+            <br>
+            Email: mpssopore@gmail.com
+            <br>
+            Office Hours: 10:00am to 04:00pm
+            <br>
+    </div>
+    <hr>
+    <!--Footer-->
+    <footer>
+        <!--Follow Us-->
+        <h1>
+            Follow Us On
+        </h1>
+        <div class="social-icon">
+            <a href="https://www.facebook.com/p/Model-Public-School-Model-Town-Sopore-100083078303984/" target="_blank">
+            <img src="icons/facebook.png" alt="faceook">
+            </a>
+        </div>
+        <div class="social-icon">
+            <a href="https://instagram.com/modelpublicschoolsopore?igshid=MzRlODBiNWFlZA" target="_blank">
+            <img src="icons/instagram.png" alt="instagram">
+            </a>
+        </div>
+        <div class="social-icon">
+            <a href="https://youtube.com/@edmodelpublicschoolsoporek4067" target="_blank">
+            <img src="icons/youtube.png" alt="Youtube">
+            </a>
+        </div>
+        <!--Copyright-->
+        <p>
+            &copy; 2023 Model Public School. All rights reserved. | Designed by Rahila Ramzan
+        </p>
+    </footer>
+</body>
+</html>
